@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="content-box">
+  <h2>プロフィール</h2>
+  <div class="user-info">
+    <div class="row">
+      <%= image_tag @user.get_profile_image, style: "border-radius: 50%; object-fit:cover;", size: '100x100' %>
+    </div>
+    <div class="row">
+      <p class="font-weight-bold"><%= @user.name %></p>
+    </div>
+    <div class="row">
+      <%= @user.section %>
+      <%= @user.years %>年
+    </div>
+  </div>
+  <%#= render '', : @ %>
+  </div>
+</div>
