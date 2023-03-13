@@ -1,2 +1,9 @@
-@import "~bootstrap/scss/bootstrap"; 
+/*
+ *= require_tree .
+ *= require_self
+ */
+ 
+$bootstrap-sass-asset-helper: asset-path('bootstrap-sass', 'bootstrap');
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';

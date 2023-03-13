@@ -1,0 +1,9 @@
+<h1>レポート作成</h1>
+<%= form_with model: @report do |f| %>
+   <%= f.text_field :name %>
+   <%= f.text_area :item %>
+   <%= f.number_field :content %>
+   <%= f.submit "Create" %>
+ <% end %>
+ 
+ <%= link_to "Back", reports_path %>
