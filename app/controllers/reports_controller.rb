@@ -14,7 +14,6 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new(report_params)
-    @report.category_id = 1
     @report.user_id = current_user.id
     if @report.save
       redirect_to report_path(@report), notice: 'レポートを作成しました'
