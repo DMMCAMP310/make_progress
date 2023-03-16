@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2023_03_13_021436) do
     t.text "item"
     t.text "content"
     t.integer "category_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_reports_on_category_id"

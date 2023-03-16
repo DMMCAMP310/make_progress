@@ -40,10 +40,10 @@ class ReportsController < ApplicationController
     @report.destroy
     redirect_to reports_path
   end
-  
+
   private
-  
+
   def report_params
-    params.require(:report).permit(:name, :item, :content, :image, :category_id)
+    params.require(:report).permit(:name, :item, :content, :category_id)
   end
 end
