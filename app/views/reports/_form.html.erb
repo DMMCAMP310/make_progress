@@ -1,0 +1,22 @@
+<div class="content-box">
+<%= form_with model: report, local:true do |f| %>
+  <div class="field row mb-3">
+    <%= f.label :題名, class: 'col-md-2' %>
+    <%= f.text_field :name, :size=>"40" %>
+  </div>
+  <div class="field row mb-3">
+    <%= f.collection_select(:category_id, @categories, :id, :name) %>
+  </div>
+  <div class="form-group row mb-3">
+    <%= f.label :必要なもの, class: 'col-md-2' %>
+    <%= f.text_area :item, :size=>"90x10" %>
+  </div>
+  <div class="form-group row mb-3">
+    <%= f.label :内容, class: 'col-md-2' %>
+    <%= f.text_area :content, :size=>"90x10" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'アップロードする', class: 'btn btn-outline-success' %>
+  </div>
+<% end %>
+</div>

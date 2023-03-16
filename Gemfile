@@ -60,4 +60,3 @@ gem 'net-imap'
 gem 'net-pop'
 
 gem 'devise'
-gem 'bootstrap5-kaminari-views', '~> 0.0.1'
