@@ -24,6 +24,10 @@ class ReportsController < ApplicationController
 
   def edit
     @report = Report.find(params[:id])
+    @categories = Category.all
+    if @categories.blank?
+      flash[:alert] = 'カテゴリーが設定されていません'
+    end
   end
 
   def update
