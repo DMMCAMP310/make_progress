@@ -2,10 +2,10 @@
    <h2>レポート一覧</h2>
    <% @reports.each do |report| %>
       <%= report.name %>
-      <% if report.images.attached? %>
-        <% report.images.each do |image| %>
-          <%= image_tag image.variant(resize: '100x100') %>
-        <% end %>
+      <% if report.image.attached? %>
+        <%= image_tag report.image, size: "200x200" %>
+      <% else %>
+        <%= image_tag 'no_image', size: "200x200" %>
       <% end %>
       <%= report.item %>
       <%= report.content %>
