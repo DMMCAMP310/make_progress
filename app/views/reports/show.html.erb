@@ -1,8 +1,11 @@
 <div class="container">
-  <h1>レポート詳細</h1>
-  <%= @report.name %>
-  <%= @report.item %>
-  <%= @report.content %>
-   
-  <%= link_to "Back", reports_path %>
+  <div class="row mt-5 pb-5">
+    <%= image_tag @report.get_image, size: '1000x500' %>
+  </div>
+  <div class="col-6">
+    <h3 class="m-2"><%= @report.name %></h3>
+    <h5 class="m-2" style="height:6rem;"><%= @report.item %></h5>
+    <h5 class="m-2" style="height:6rem;"><%= @report.content %></h5>
+    <%= link_to "Back", reports_path %>
+  </div>
 </div>

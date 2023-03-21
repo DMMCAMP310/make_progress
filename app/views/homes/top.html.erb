@@ -1,7 +1,27 @@
-<div class="container">
-  <h2>新着レポート</h2>
-    <div class="row">
-      <div class="col-3">
+<div class="container m-5 mx-auto">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="background">
+        <p class="col-md-8 w-50 mx-auto mt-4 shadow-lg font-weight-bold">
+          ようこそ
+        </p>
       </div>
+        <h2 >新着レポート</h2>
+        <div style="display:flex; flex-wrap:wrap;">
+          <% @reports.each do |report| %>
+          <div class="mr-3 mt-3">
+            <%= link_to report_path(report.id) do %>
+              <% if report.image.attached? %>
+                <%= image_tag report.image, size: "200x200" %>
+              <% else %>
+                <%= image_tag 'no_image', size: "200x200" %>
+              <% end %>
+              <P class="mt-3 mb-1 text-dark"><%= report.name %></P>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+        <p align="right"><%= link_to"全てのレポートを見る>", reports_path %></p>
     </div>
+  </div>
 </div>

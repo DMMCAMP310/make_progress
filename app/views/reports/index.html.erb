@@ -1,12 +1,22 @@
-<div class="container">
-   <h2>レポート一覧</h2>
-   <% @reports.each do |report| %>
-      <%= report.name %>
-      <%= report.item %>
-      <%= report.content %>
-      <%= link_to "Show", report_path(report) %>
-      <%= link_to "Edit", edit_report_path(report) %>
-    <% end %>
-    
-    <%= link_to "New", new_report_path %>
+<div class="container m-5 mx-auto">
+  <div class="row">
+    <div class="col-10">
+      <div class="d-flex flex-row">
+        <h3>レポート一覧</h3>
+        <p class="d-flex align-items-end m-2">(全<%= @reports.count %>件)</p>
+      </div>
+      <div class="d-flex flex-wrap">
+        <% @reports.each do |report| %>
+          <%= link_to report_path(report.id) do %>
+          <div class="m-2">
+            <div class="mb-2">
+              <%= image_tag report.get_image, size: '200x150' %>
+            </div>
+            <p class="text-dark"><strong><%= report.name %></strong></p>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
