@@ -1,10 +1,6 @@
 <div class="container">
   <div class="row mt-5 pb-5">
-    <% if @report.image.attached? %>
-      <%= image_tag report.image, size: "1000x500" %>
-    <% else %>
-      <%= image_tag 'no_image', size: "1000x500" %>
-    <% end %>
+    <%= image_tag @report.get_image, size: '1000x500' %>
   </div>
   <div class="col-6">
     <h3 class="m-2"><%= @report.name %></h3>

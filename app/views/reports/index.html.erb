@@ -10,11 +10,7 @@
           <%= link_to report_path(report.id) do %>
           <div class="m-2">
             <div class="mb-2">
-              <% if report.image.attached? %>
-                <%= image_tag report.image, size: "200x200" %>
-              <% else %>
-                <%= image_tag 'no_image', size: "200x200" %>
-              <% end %>
+              <%= image_tag report.get_image, size: '200x150' %>
             </div>
             <p class="text-dark"><strong><%= report.name %></strong></p>
           </div>
