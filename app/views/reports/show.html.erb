@@ -6,6 +6,27 @@
     <h3 class="m-2"><%= @report.name %></h3>
     <h5 class="m-2" style="height:6rem;"><%= @report.item %></h5>
     <h5 class="m-2" style="height:6rem;"><%= @report.content %></h5>
-    <%= link_to "Back", reports_path %>
   </div>
+  <div class="offset-1 col-10">
+    <div class="row">
+      <% @reviews.each do |review| %>
+      <div class="offset-md-5 col-md-5">
+        <p class="h3"><%= review.content %></p>
+        <label><%= review.created_at %></label>
+      </div>
+      <% end %>
+    </div>
+
+    <% if user_signed_in? %>
+      <div class="row">
+        <div class="offset-md-5 col-md-5">
+          <%= form_with model: @review, url: report_reviews_path(@report) do |f| %>
+            <%= f.text_area :content, class: "form-control m-2" %>
+            <%= f.submit "レビューを追加" , class:"btn samuraimart-submit-button ml-2"%>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  <%= link_to "Back", reports_path %>
 </div>
