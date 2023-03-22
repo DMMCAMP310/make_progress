@@ -1,5 +1,8 @@
 <div class="container m-5 mx-auto">
   <div class="row">
+    <div class="col-2">
+      <%= render partial: "layouts/sidebar", locals: { categories: @categories, major_category_names: @major_category_names } %>
+    </div>
     <div class="col-10">
       <div class="d-flex flex-row">
         <h3>レポート一覧</h3>

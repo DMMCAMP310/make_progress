@@ -1,6 +1,8 @@
 class ReportsController < ApplicationController
   def index
     @reports = Report.all
+    @categories = Category.all
+    @major_category_names = Category.major_categories
   end
 
   def show
@@ -51,5 +53,10 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:name, :item, :content, :category_id, :image)
+  end
+  
+  def category_params
+      params[:category].present? ? params[:category]
+                                 : "none"
   end
 end
