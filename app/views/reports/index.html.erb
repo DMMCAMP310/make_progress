@@ -8,7 +8,7 @@
         <div class="container">
         <% if @category.present? %>
           <%= link_to "トップ", "#", category: @major_category_name %> > <%= @category.name %>
-          <h3><%= @category.name %>の商品一覧<%= @reports.count %>件</h3>
+          <h3><%= @category.name %>一覧<%= @reports.count %>件</h3>
         <% else %>
           <h3>レポート一覧</h3>
           <p class="d-flex align-items-end m-2">(全<%= @reports.count %>件)</p>
