@@ -1,9 +1,19 @@
 <div class="container m-5 mx-auto">
   <div class="row">
+    <div class="col-2">
+      <%= render partial: "layouts/sidebar", locals: { categories: @categories, major_category_names: @major_category_names } %>
+    </div>
     <div class="col-10">
       <div class="d-flex flex-row">
-        <h3>レポート一覧</h3>
-        <p class="d-flex align-items-end m-2">(全<%= @reports.count %>件)</p>
+        <div class="container">
+        <% if @category.present? %>
+          <%= link_to "トップ", "#", category: @major_category_name %> > <%= @category.name %>
+          <h3><%= @category.name %>一覧<%= @reports.count %>件</h3>
+        <% else %>
+          <h3>レポート一覧</h3>
+          <p class="d-flex align-items-end m-2">(全<%= @reports.count %>件)</p>
+        <% end %>
+        </div>
       </div>
       <div class="d-flex flex-wrap">
         <% @reports.each do |report| %>
