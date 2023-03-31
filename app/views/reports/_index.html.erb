@@ -1,0 +1,12 @@
+<div class="d-flex flex-wrap">
+  <% @reports.each do |report| %>
+    <%= link_to report_path(report.id) do %>
+    <div class="m-2">
+      <div class="mb-2">
+        <%= image_tag report.get_image, size: '200x150' %>
+      </div>
+      <p class="text-dark"><strong><%= report.name %></strong></p>
+    </div>
+    <% end %>
+  <% end %>
+</div>
