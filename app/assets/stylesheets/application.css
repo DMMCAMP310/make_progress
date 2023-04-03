@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .bg-header{
+   background-color: #A9A9A9;
+ }
